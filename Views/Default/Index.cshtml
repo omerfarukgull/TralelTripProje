@@ -1,0 +1,117 @@
+﻿@using TralelTripProje.Models.Siniflar
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+
+<!DOCTYPE HTML>
+<html>
+
+<body>
+    <div class="header-banner">
+        <div class="wrap">
+            <div class="banner">
+                <div class="indent">
+                    <h2 class="indent-left margin-bot">Tatit & Seyahat Bloğum</h2>
+                    <div class="banner-left">
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/glass.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Restorant</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/flight.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Uçuşlar</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/group.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Aktiveteler</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="con-text">
+                            <div class="grid1-img">
+                                <img src="~/web/images/key.png" alt="">
+                            </div>
+                            <div class="grid1-desc">
+                                <p>Tatil Fırsatları</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="header_bottom_right_images">
+
+                        <div class="slider" style="width:550px; height:330px">
+                            <ul class="rslides" id="slider1">
+                               @foreach (var x in Model)
+                               {
+                                   <li><img style="height:330px" src="@x.BlogImage" alt=""></li>
+
+                               }           
+                         
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="wrap">
+            <div class="wrapper">
+                <div class="con-top">
+                    <h3>Tatil Seyathat Bloğma hoşgeldiniz!</h3>
+                    <p>
+                        Bu projeyi Mart 2023 tarihinde başlayıp gezip gördügüm yerleri
+                        sizlerle paylaşmak için kodlamas ını tamamen kendim yaptığım mvc5
+                        üzerine kurulu dinamik bir web projesi geliştirdik. Hem
+                        Türkiye'den hem de yurt dışından gezip gördüğüm yerleri blog
+                        yazıları olarak sizlerle paylaşma niyetindeyim. Umuyorum ki
+                        yazdıklaramı beğenirsiniz, keyifli okumalar, sağlıklı günler .
+                    </p>
+                </div>
+                
+               
+                @Html.Action("Partial1", "Default")
+
+                <div class="grids">
+                    <div class="box1">
+
+                        @Html.Action("Partial3", "Default")
+
+                        <div class="padding1">
+                            <h4>En Beğendiğim Yerler</h4>
+                            <div class="box-left">
+                                @Html.Action("Partial4","Default")
+                            </div>
+                            <div class="box1-left">
+                                @Html.Action("Partial5","Default")
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
